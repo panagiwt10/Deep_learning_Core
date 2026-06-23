@@ -1,4 +1,4 @@
-# 🩸 Blood Cell Classification
+#  Blood Cell Classification
 
 A deep learning project that classifies white blood cell images into 4 categories using a Custom CNN and MobileNetV2 with Transfer Learning.
 
