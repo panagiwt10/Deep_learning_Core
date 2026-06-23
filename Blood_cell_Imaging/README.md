@@ -105,7 +105,6 @@ See `classification_report.csv` for the full per-class breakdown.
 
 | Model | Test Accuracy |
 |-------|--------------|
-| Custom CNN | see report |
 | MobileNetV2 (fine-tuned) | see report |
 
 MobileNetV2 with fine-tuning consistently outperforms the Custom CNN thanks to ImageNet pre-training.
