@@ -15,10 +15,9 @@ A deep learning project that classifies white blood cell images into 4 categorie
 
 ```
 BLOOD_CELL_IMAGING/
-├── blood_cell_remixed.ipynb          # Main notebook — full pipeline
-├── best_blood_cell_model.keras       # Saved Custom CNN (best weights)
-├── blood_cell_mobilenetv2_final.keras# Saved MobileNetV2 (fine-tuned)
-└── classification_report.csv         # Per-class evaluation metrics
+├── blood_cell.ipynb                   # Main notebook — full pipeline
+├── blood_cell_mobilenetv2_final.keras # Saved MobileNetV2 (fine-tuned)
+└── classification_report.csv          # Per-class evaluation metrics
 ```
 
 ---
@@ -30,10 +29,9 @@ BLOOD_CELL_IMAGING/
 2. EDA + 6 visualizations
 3. Preprocessing & Data Augmentation
 4. Stratified 70/15/15 train/val/test split (TRAIN+TEST pooled)
-5. Model 1 — Custom CNN (trained from scratch)
-6. Model 2 — MobileNetV2 (Phase 1: frozen base → Phase 2: fine-tuning)
-7. Evaluation — Confusion Matrix, Classification Report, F1/Precision/Recall
-8. Error Analysis
+5. Model 2 — MobileNetV2 (Phase 1: frozen base → Phase 2: fine-tuning)
+6. Evaluation — Confusion Matrix, Classification Report, F1/Precision/Recall
+7. Error Analysis
 ```
 
 > **Note on the data split:** The Kaggle dataset's predefined `TRAIN/` and `TEST/` folders are not from the same distribution, which causes inflated validation scores (~90%) but low test scores (~56%) when evaluated directly against `TEST/`. The notebook pools both folders and creates its own stratified split to fix this.
@@ -78,9 +76,6 @@ Run all cells top to bottom. The dataset will be downloaded automatically via `k
 
 ```python
 import tensorflow as tf
-
-# Custom CNN
-cnn = tf.keras.models.load_model("best_blood_cell_model.keras")
 
 # MobileNetV2
 mobilenet = tf.keras.models.load_model("blood_cell_mobilenetv2_final.keras")
